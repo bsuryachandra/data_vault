@@ -13,7 +13,7 @@ Install dbt for PostgreSQL by running 'pip install dbt-postgres'.
 4. Download the dbt project from the repository you're using.
 Navigate to the project repository in your Terminal and run the following commands:
 
-    a. Open dbt_profiles.yml to update target database configuration like database, schema, passwords etc
+    a. Open profiles.yml to update target database configuration like database, schema, passwords etc
     
     b. Run 'dbt deps' to install the project's dependencies.
 
