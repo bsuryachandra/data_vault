@@ -23,3 +23,6 @@ Navigate to the project repository in your Terminal and run the following comman
 
 ## RAW Vault
 ![This is an Raw Vault](erd/raw_vault.png)
+
+## Data Mart
+![This is Data Mart Layer](erd/data_mart.png)
