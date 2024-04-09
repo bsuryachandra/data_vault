@@ -4,7 +4,7 @@ This dbt project reads data from the landing zone, which is loaded by a SQL scri
 ## Setup Database and tables
 1. Install the PostgreSQL database from the web for this dbt project.
 2. Ensure that the database runs on port 5432 and create a user 'postgres' and database 'analytics' because we have hardcoded these details in the profiles.yml file.
-3. Download and install the DBeaver tool and connect to analytics database. Afterward, execute the script located at data_vault\setup_script\create_tables_load_data.sql. This script will create the necessary landing tables.
+3. Download and install the DBeaver tool and connect to the analytics database. Afterward, execute the script located at data_vault\setup_script\create_tables_load_data.sql. This script will create the necessary landing tables.
 ## Setup dbt
 1. Make sure you have Python version 3.9 or higher installed on your computer.
 2. Create a Python virtual environment named 'datavault' using the command 'virtualenv datavault'.
