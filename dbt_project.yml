@@ -1,0 +1,58 @@
+
+# Name your project! Project names should contain only lowercase characters
+# and underscores. A good package name should reflect your organization's
+# name or the intended use of these models
+name: 'data_vault'
+version: '1.0.0'
+config-version: 2
+
+# This setting configures which "profile" dbt uses for this project.
+profile: 'data_vault'
+
+# These configurations specify where dbt should look for different types of files.
+# The `model-paths` config, for example, states that models in this project can be
+# found in the "models/" directory. You probably won't need to change these!
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:         # directories to be removed by `dbt clean`
+  - "target"
+  - "dbt_packages"
+
+vars:
+  # The package can be temporarily disabled using this variable
+  dbt_constraints_enabled: true
+
+  # The package can also add constraints on sources if you have sufficient privileges
+  dbt_constraints_sources_enabled: false
+
+  # You can also be specific on which constraints are enabled for sources
+  # You must also enable dbt_constraints_sources_enabled above
+  dbt_constraints_sources_pk_enabled: true
+  dbt_constraints_sources_uk_enabled: true
+  dbt_constraints_sources_fk_enabled: true
+  dbt_constraints_sources_nn_enabled: true
+
+models:
+  data_vault:
+    staging:
+      +materialized: view
+      +database: "analytics"
+      +schema: "stage"
+    raw_vault:
+      +materialized: table
+      +database: "analytics"
+      +schema: "data_vault"
+    business_vault:
+      +materialized: table
+      +database: "analytics"
+      +schema: "data_vault"
+    marts:
+      +materialized: table
+      +database: "analytics"
+      +schema: "data_mart"
+
