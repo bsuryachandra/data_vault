@@ -1,5 +1,5 @@
 ## Overview
-This dbt project reads data from the landing zone, which is loaded by a SQL script. It utilizes the automate_dv dbt package to create a raw data vault. The models in the raw data vault are used in the marts layer to create dimension and fact models. These dimensions and facts are then used by reporting tools.
+This dbt project reads data from the landing zone, which is loaded by a SQL script. It utilizes the automate_dv dbt package to create a raw data vault. The models in the raw data vault are used in the marts layer to create dimension and fact models. These dimensions and facts are then used by reporting tools. This project also uses tests from dbt_constraints pacakge.
 
 ## Setup Database and tables
 1. Install the PostgreSQL database from the web for this dbt project.
